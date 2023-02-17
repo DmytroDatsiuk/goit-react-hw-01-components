@@ -1,4 +1,6 @@
-.profile {
+import styled from 'styled-components';
+
+export const ProfileStyle = styled.div`
   width: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -10,13 +12,15 @@
 
   text-align: center;
   border-radius: 5px;
-}
-.user {
+`;
+
+export const User = styled.div`
   display: block;
   line-height: 2;
   margin-bottom: 20px;
-}
-.userImg {
+`;
+
+export const UserImg = styled.img`
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
@@ -25,13 +29,15 @@
   margin-right: auto;
   border-radius: 50%;
   border: 1px solid black;
-}
-.userName {
+`;
+
+export const UserName = styled.p`
   font-weight: 900;
   font-size: larger;
   color: black;
-}
-.profileList {
+`;
+
+export const ProfileList = styled.ul`
   display: flex;
   border-end-end-radius: 5px;
   border-end-start-radius: 5px;
@@ -41,22 +47,25 @@
 
   margin-left: auto;
   margin-right: auto;
-}
-.profileListItem {
+`;
+
+export const ProfileListItem = styled.li`
   padding: 15px;
 
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-.profileListItem:first-child {
-  border-right: 1px solid rgb(172, 172, 172);
-}
-.profileListItem:last-child {
-  border-left: 1px solid rgb(172, 172, 172);
-}
-.desc {
+
+  &:first-child {
+    border-right: 1px solid rgb(172, 172, 172);
+  }
+  &:last-child {
+    border-left: 1px solid rgb(172, 172, 172);
+  }
+`;
+
+export const ProfileDesc = styled.p`
   color: black;
   font-size: large;
   font-weight: 700;
-}
+`;

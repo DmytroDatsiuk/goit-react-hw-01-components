@@ -7,10 +7,13 @@ import { Profile } from 'components/Profile/Profile';
 import { Statistics } from 'components/Statistic/Statistics';
 import { FriendList } from 'components/Friends/FriendList';
 import { TransactionList } from 'components/Transaction/TransactionList';
+import { GlobalStyle } from './GlobalStyle';
+import { Layout } from './Layout';
 
 export const App = () => {
   return (
-    <div>
+    <Layout>
+      <GlobalStyle/>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -22,6 +25,6 @@ export const App = () => {
       {/* <Statistics stats={data} /> */}
       <FriendList friends={friends} />
       <TransactionList items={transactions} />
-    </div>
+    </Layout>
   );
 };

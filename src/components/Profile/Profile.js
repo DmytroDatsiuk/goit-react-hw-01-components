@@ -1,5 +1,13 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css';
+import {
+  ProfileStyle,
+  User,
+  UserImg,
+  UserName,
+  ProfileList,
+  ProfileListItem,
+  ProfileDesc,
+} from './Profile.styled';
 
 export const Profile = ({
   avatar,
@@ -9,29 +17,29 @@ export const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div className={css.profile}>
-      <div className={css.user}>
-        <img src={avatar} alt="User avatar" className={css.userImg} />
-        <p className={css.userName}>{username}</p>
+    <ProfileStyle>
+      <User>
+        <UserImg src={avatar} alt="User avatar" />
+        <UserName>{username}</UserName>
         <p>@{tag}</p>
         <p>{location}</p>
-      </div>
+      </User>
 
-      <ul className={css.profileList}>
-        <li className={css.profileListItem}>
+      <ProfileList >
+        <ProfileListItem>
           <span>Followers</span>
-          <span className={css.desc}>{followers}</span>
-        </li>
-        <li className={css.profileListItem}>
+          <ProfileDesc>{followers}</ProfileDesc>
+        </ProfileListItem>
+        <ProfileListItem>
           <span>Views</span>
-          <span className={css.desc}>{views}</span>
-        </li>
-        <li className={css.profileListItem}>
+          <ProfileDesc>{views}</ProfileDesc>
+        </ProfileListItem>
+        <ProfileListItem>
           <span>Likes</span>
-          <span className={css.desc}>{likes}</span>
-        </li>
-      </ul>
-    </div>
+          <ProfileDesc>{likes}</ProfileDesc>
+        </ProfileListItem>
+      </ProfileList>
+    </ProfileStyle>
   );
 };
 
