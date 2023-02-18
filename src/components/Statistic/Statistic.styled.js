@@ -33,8 +33,6 @@ export const StatisticListItem = styled.li`
   display: flex;
   flex-direction: column;
   background-color: ${props => {
-    console.log(props);
-    console.log(props.isColor);
     switch (props.isColor) {
       case '.docx':
         return 'rgba(172, 171, 247, 0.525)';
