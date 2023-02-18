@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const ProfileStyle = styled.div`
+export const ProfileBox = styled.div`
   width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+  margin-bottom: 20px;
   padding-top: 40px;
 
   background-color: #fff;

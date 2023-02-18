@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
+import { FriendActive, FriendImg } from './Friend.styled';
+import { BsCircleFill } from "react-icons/bs";
+
 export const FriendListItem = ({ friend: { avatar, name, isOnline } }) => {
   return (
     <>
-      <span className="status">{isOnline}</span>
-      <img className="avatar" src={avatar} alt={name} width="48" />
+      <FriendActive isActive={isOnline} > <BsCircleFill/> </FriendActive>
+      <FriendImg className="avatar" src={avatar} alt={name} width="48" />
       <p className="name">{name}</p>
     </>
   );

@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
 import { StatisticsItem } from './StaticsticsItem';
-
+import { StatisticSection, StatisticTitle, StatisticList, StatisticListItem } from './Statistic.styled';
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {title && <h2 className="">{title}</h2>}
-      <ul className="stat-list">
+    <StatisticSection >
+      {title && <StatisticTitle>{title}</StatisticTitle>}
+      <StatisticList>
         {stats.map(item => {
           return (
-            <li key={item.id}>
+            <StatisticListItem isColor={item.label} key={item.id}>
               <StatisticsItem item={item} />
-            </li>
+            </StatisticListItem>
           );
         })}
-      </ul>
-    </section>
+      </StatisticList>
+    </StatisticSection>
   );
 };
 
@@ -23,6 +23,7 @@ Statistics.prototype = {
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
     })
   ),
 };
