@@ -1,15 +1,22 @@
 import PropTypes from 'prop-types';
-import { StatisticsItem } from './StaticsticsItem';
-import { StatisticSection, StatisticTitle, StatisticList, StatisticListItem } from './Statistic.styled';
+import {
+  StatisticSection,
+  StatisticTitle,
+  StatisticList,
+  StatisticListItem,
+  StatisticPercentage,
+  StatisticLabel,
+} from './Statistic.styled';
 export const Statistics = ({ title, stats }) => {
   return (
-    <StatisticSection >
+    <StatisticSection>
       {title && <StatisticTitle>{title}</StatisticTitle>}
       <StatisticList>
-        {stats.map(item => {
+        {stats.map(({ id, label, percentage }) => {
           return (
-            <StatisticListItem isColor={item.label} key={item.id}>
-              <StatisticsItem item={item} />
+            <StatisticListItem isColor={label} key={id}>
+              <StatisticLabel>{label}</StatisticLabel>
+              <StatisticPercentage>{percentage}%</StatisticPercentage>
             </StatisticListItem>
           );
         })}
@@ -24,6 +31,7 @@ Statistics.prototype = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
-    })
-  ),
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };

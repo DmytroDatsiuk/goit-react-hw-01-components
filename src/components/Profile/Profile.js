@@ -25,7 +25,7 @@ export const Profile = ({
         <p>{location}</p>
       </User>
 
-      <ProfileList >
+      <ProfileList>
         <ProfileListItem>
           <span>Followers</span>
           <ProfileDesc>{followers}</ProfileDesc>
@@ -52,5 +52,5 @@ Profile.propTypes = {
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
-  }),
+  }).isRequired,
 };

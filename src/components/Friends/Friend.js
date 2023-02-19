@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { FriendActive, FriendImg } from './Friend.styled';
-import { BsCircleFill } from "react-icons/bs";
+import { BsCircleFill } from 'react-icons/bs';
 
-export const FriendListItem = ({ friend: { avatar, name, isOnline } }) => {
+export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <>
-      <FriendActive isActive={isOnline} > <BsCircleFill/> </FriendActive>
+      <FriendActive isActive={isOnline}>
+        {' '}
+        <BsCircleFill />{' '}
+      </FriendActive>
       <FriendImg className="avatar" src={avatar} alt={name} width="48" />
       <p className="name">{name}</p>
     </>
@@ -13,11 +16,9 @@ export const FriendListItem = ({ friend: { avatar, name, isOnline } }) => {
 };
 
 FriendListItem.protoType = {
-  friend: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool.isRequired,
-    })
-  ),
+  friend: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+  }).isRequired,
 };

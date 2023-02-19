@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 
-import { TransacionListItem } from './TransactionListItem';
-import { Transaction, TransactionThead, TransactionTbody, TransactionTheadTh } from './Transaction.styled';
+import {
+  Transaction,
+  TransactionThead,
+  TransactionTbody,
+  TransactionTheadTh,
+  TransactionTheadTd,
+} from './Transaction.styled';
 
 export const TransactionList = ({ items }) => {
   return (
@@ -13,10 +18,14 @@ export const TransactionList = ({ items }) => {
           <TransactionTheadTh>Currency</TransactionTheadTh>
         </tr>
       </TransactionThead>
-      {items.map(item => {
+      {items.map(({ id, type, amount, currency }) => {
         return (
-          <TransactionTbody key={item.id}>
-            <TransacionListItem item={item} />
+          <TransactionTbody key={id}>
+            <tr>
+              <TransactionTheadTd>{type}</TransactionTheadTd>
+              <TransactionTheadTd>{amount}</TransactionTheadTd>
+              <TransactionTheadTd>{currency}</TransactionTheadTd>
+            </tr>
           </TransactionTbody>
         );
       })}
@@ -24,10 +33,13 @@ export const TransactionList = ({ items }) => {
   );
 };
 
-TransacionListItem.prototype = {
+TransactionList.prototype = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-    })
-  ),
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
