@@ -6,6 +6,8 @@ export const Transaction = styled.table`
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 5px 5px rgba(0, 0, 0, 0.3);
+
   border-collapse: collapse;
 `;
 
@@ -14,13 +16,11 @@ export const TransactionThead = styled.thead`
   color: white;
   text-transform: uppercase;
   font-size: smaller;
-
 `;
 
 export const TransactionTheadTh = styled.th`
   border: 1px solid rgb(172, 172, 172);
   padding: 5px;
-
 `;
 
 export const TransactionTbody = styled.tbody`
@@ -28,15 +28,15 @@ export const TransactionTbody = styled.tbody`
   color: gray;
   text-transform: capitalize;
   font-size: smaller;
-  
+
   &:nth-child(2n) {
-  background-color: white;
-}
+    background-color: white;
+  }
 `;
 
 export const TransactionTheadTd = styled.td`
-font-weight: 300;
-font-size: smaller;
+  font-weight: 300;
+  font-size: smaller;
   border: 1px solid rgb(172, 172, 172);
   padding: 5px;
 `;

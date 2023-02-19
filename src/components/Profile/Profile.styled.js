@@ -13,6 +13,8 @@ export const ProfileBox = styled.div`
 
   text-align: center;
   border-radius: 5px;
+
+  box-shadow: 0px 1px 5px 5px rgba(0, 0, 0, 0.3);
 `;
 
 export const User = styled.div`

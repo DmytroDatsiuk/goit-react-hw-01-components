@@ -8,6 +8,8 @@ export const StatisticSection = styled.div`
   margin-bottom: 20px;
   border-radius: 5px;
   color: gray;
+  box-shadow: 0px 1px 5px 5px rgba(0, 0, 0, 0.3);
+
   /* padding: 15px; */
 `;
 

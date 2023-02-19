@@ -13,7 +13,7 @@ import { Layout } from './Layout';
 export const App = () => {
   return (
     <Layout>
-      <GlobalStyle/>
+      <GlobalStyle />
       <Profile
         username={user.username}
         tag={user.tag}
@@ -22,7 +22,6 @@ export const App = () => {
         stats={user.stats}
       />
       <Statistics title="Upload stats" stats={data} />
-      {/* <Statistics stats={data} /> */}
       <FriendList friends={friends} />
       <TransactionList items={transactions} />
     </Layout>
