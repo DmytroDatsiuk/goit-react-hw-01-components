@@ -9,6 +9,7 @@ import { FriendList } from 'components/Friends/FriendList';
 import { TransactionList } from 'components/Transaction/TransactionList';
 import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout';
+import { Counter } from './Counter';
 
 export const App = () => {
   return (
@@ -24,6 +25,7 @@ export const App = () => {
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
       <TransactionList items={transactions} />
+      <Counter />
     </Layout>
   );
 };
